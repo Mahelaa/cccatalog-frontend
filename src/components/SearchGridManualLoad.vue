@@ -2,6 +2,10 @@
   <section :class="{ 'search-grid': true, 'search-grid__contain-images': shouldContainImages }"
            ref="searchGrid">
     <div class="search-grid_ctr" ref="gridItems">
+      <!-- Added content placeholder -->
+      <div v-show="isFetchingImages" class="search-grid_placeholder">
+        <Skeleton/>
+      </div>
       <div v-show="!isFetchingImages && includeAnalytics" class="search-grid_analytics" >
         <h2>{{ searchTerm }}</h2>
         <span> {{ _imagesCount }}</span>
@@ -33,6 +37,7 @@ import { SET_IMAGES } from '@/store/mutation-types';
 import SearchGridCell from '@/components/SearchGridCell';
 import SearchGridFilter from '@/components/SearchGridFilter';
 import LoadingIcon from '@/components/LoadingIcon';
+import Skeleton from '@/components/Content-placeholder';
 
 const DEFAULT_PAGE_SIZE = 20;
 
@@ -42,6 +47,7 @@ export default {
     SearchGridFilter,
     SearchGridCell,
     LoadingIcon,
+    Skeleton,
   },
   data: () => ({
     isDataInitialized: false,
