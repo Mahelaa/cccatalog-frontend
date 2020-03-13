@@ -31,6 +31,7 @@ const initialState = (searchParams) => {
   return {
     errorMsg: null,
     image: {},
+    skeleton: {},
     imagesCount: 0,
     pageCount: 0,
     imagePage: 1,

@@ -2,8 +2,13 @@
   <section :class="{ 'search-grid': true, 'search-grid__contain-images': shouldContainImages }"
            ref="searchGrid">
     <div class="search-grid_ctr" ref="gridItems">
-      <!-- Added content placeholder -->
+      <!-- Added content placeholder testinf -->
       <div v-show="isFetchingImages" class="search-grid_placeholder">
+        <Skeleton/>
+        <Skeleton/>
+        <Skeleton/>
+        <Skeleton/>
+        <Skeleton/>
         <Skeleton/>
       </div>
       <div v-show="!isFetchingImages && includeAnalytics" class="search-grid_analytics" >
